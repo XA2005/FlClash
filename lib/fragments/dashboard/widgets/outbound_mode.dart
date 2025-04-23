@@ -24,10 +24,9 @@ class OutboundMode extends StatelessWidget {
           );
           return Theme(
               data: Theme.of(context).copyWith(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                hoverColor: Colors.transparent
-              ),
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent),
               child: CommonCard(
                 onPressed: () {},
                 info: Info(
@@ -132,10 +131,12 @@ class OutboundModeV2 extends StatelessWidget {
                               .titleSmall
                               ?.adjustSize(1)
                               .copyWith(
-                                color: _getTextColor(
-                                  context,
-                                  mode,
-                                ),
+                                color: item == mode
+                                    ? _getTextColor(
+                                        context,
+                                        item,
+                                      )
+                                    : null,
                               ),
                         ),
                       ),
